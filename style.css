@@ -1,0 +1,213 @@
+body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Courier New', 'Creepster', monospace;
+            touch-action: none;
+        }
+        #ui {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            pointer-events: none;
+            z-index: 10;
+            text-shadow: 2px 2px 0px black;
+            font-weight: bold;
+        }
+        .panel {
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(4px);
+            padding: 12px 24px;
+            border-radius: 30px;
+            border-left: 4px solid #ff3366;
+            border-right: 4px solid #ff3366;
+            color: #ffcc00;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        .panel span {
+            color: white;
+            font-weight: bold;
+            font-size: 2rem;
+            margin-left: 8px;
+        }
+        #healthBarContainer {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            background: #330000;
+            height: 20px;
+            border-radius: 20px;
+            border: 2px solid #aa2222;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 10;
+        }
+        #healthFill {
+            width: 100%;
+            height: 100%;
+            background: #e32222;
+            background: linear-gradient(90deg, #ff4444, #aa0000);
+            transition: width 0.2s ease;
+        }
+        .crosshair {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(255, 50, 50, 0.9);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 20;
+            box-shadow: 0 0 8px red;
+        }
+        .crosshair::before, .crosshair::after {
+            content: '';
+            position: absolute;
+            background: red;
+        }
+        .crosshair::before {
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            transform: translateY(-50%);
+        }
+        .crosshair::after {
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            transform: translateX(-50%);
+        }
+        #gameOverPanel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(8px);
+            border: 3px solid #aa0000;
+            border-radius: 30px;
+            padding: 30px 40px;
+            text-align: center;
+            z-index: 30;
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 280px;
+            pointer-events: auto;
+            font-family: 'Courier New', monospace;
+        }
+        #gameOverPanel h1 {
+            color: #ff6666;
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 4px;
+        }
+        #finalScore {
+            color: #ffcc44;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        #highestScore {
+            color: #ff6666;
+            font-size: 1.2rem;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        #restartBtn {
+            background: #660000;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-family: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 0 12px darkred;
+        }
+        #restartBtn:hover {
+            background: #aa2222;
+            transform: scale(1.05);
+        }
+        .controls-tip {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            background: rgba(0,0,0,0.6);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #ccc;
+            pointer-events: none;
+            font-family: monospace;
+        }
+        #powerupStatus {
+            position: absolute;
+            bottom: 80px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #ffaa44;
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 10;
+            font-family: monospace;
+            text-align: right;
+        }
+        #muteBtn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            border: none;
+            color: white;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 20;
+            font-family: monospace;
+            backdrop-filter: blur(4px);
+            pointer-events: auto;
+        }
+        .hit-marker {
+            position: absolute;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff6666;
+            text-shadow: 1px 1px 0 black;
+            pointer-events: none;
+            z-index: 100;
+            font-family: monospace;
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
+            animation: hitFade 0.3s ease-out forwards;
+        }
+        @keyframes hitFade {
+            0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -80%) scale(1.2); }
+        }
+        @media (max-width: 600px) {
+            .panel { padding: 6px 16px; font-size: 1rem; }
+            .panel span { font-size: 1.4rem; }
+            #gameOverPanel { padding: 20px; min-width: 240px; }
+            .controls-tip { font-size: 10px; bottom: 60px; }
+            #powerupStatus { font-size: 10px; bottom: 70px; }
+        }
