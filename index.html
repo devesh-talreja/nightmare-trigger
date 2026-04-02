@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Nightmare Trigger - Final Evolution</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="icon.jpg">
+</head>
+<body>
+    <div id="ui">
+        <div class="panel">💀 SCORE <span id="scoreValue">0</span></div>
+        <div class="panel">⏱️ TIME <span id="timerValue">120</span></div>
+    </div>
+    <div id="healthBarContainer">
+        <div id="healthFill" style="width: 100%"></div>
+    </div>
+    <div class="crosshair"></div>
+    <div class="controls-tip">🖱️ DRAG to look | 🎮 WASD / arrows to move | 👆 TAP to shoot</div>
+    <div id="powerupStatus"></div>
+    <button id="muteBtn">🔊</button>
+    <div id="gameOverPanel">
+        <h1>GAME OVER</h1>
+        <div style="color: #ff4444;">🔥 YOUR NIGHTMARE SCORE 🔥</div>
+        <div id="finalScore">0</div>
+        <div id="highestScore">🏆 HIGHEST: 0</div>
+        <button id="restartBtn">🔫 PLAY AGAIN</button>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
+
+        <script type="module" src="script.js"></script>
+
+</body>
+</html>
