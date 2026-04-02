@@ -1,6 +1,6 @@
 # 🔫 Nightmare Trigger - 3D Horror FPS
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue)](#)   [![Status](https://img.shields.io/badge/status-stable-green)](#)   [![Three.js](https://img.shields.io/badge/Three.js-r128-black)](https://threejs.org/)   [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue)](#)    [![Status](https://img.shields.io/badge/status-stable-green)](#)    [![Three.js](https://img.shields.io/badge/Three.js-r128-black)](https://threejs.org/)    [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 
 
 > **Face your nightmares** – A fast-paced, browser-based 3D first-person shooter built with Three.js. Survive the timer, hunt down monsters, and conquer the shifting realms.
@@ -52,7 +52,7 @@
 
 ### Direct Access
 
-> **[▶️ Click Here to Play the Game Directly in Your Browser (Live Demo)](https://link-to-be-added-later)**
+> **[▶️ Play Nightmare Trigger Online](https://nightmare-trigger.netlify.app/)**
 
 ### Local Setup (For Offline Play)
 
